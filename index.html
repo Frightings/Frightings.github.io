@@ -65,7 +65,7 @@
     <article id="post-JAVA知识点总结" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/10/11/JAVA知识点总结/" class="article-date">
-  <time datetime="2019-10-11T03:09:24.000Z" itemprop="datePublished">2019-10-11</time>
+  <time datetime="2019-10-11T03:21:21.000Z" itemprop="datePublished">2019-10-11</time>
 </a>
     
   </div>
@@ -118,11 +118,261 @@
 <p>9.八种基本数据类型：</p>
 <p>byte  short   int   long</p>
 <p>float   double   Boolean   char</p>
+<p>  <strong>第三章 面向对象三大特征—封装</strong></p>
+<p>1.封装的概念：封装是指将对象的状态信息隐藏在对象内部，不允许外部程序直接访问对象内部的信息，而是通过该类所提供的方法来实现对内部信息的操作访问。</p>
+<p>2.封装的步骤</p>
+<p>​      1.把属性私有化（private）</p>
+<p>​      2.对这些属性设置get和set方法</p>
+<p>​      3.调用处理这些方法</p>
+<p>3.封装的作用与好处：</p>
+<p>作用：避免一些用一些不合乎常理的操作</p>
+<p>好处：</p>
+<p>（1） 提高了安全性</p>
+<p>（2） 提高了复用性</p>
+<p>（3） 隐藏了实现细节</p>
+<p>4.封装的案例:</p>
+<p>/* 文件名: EncapTest.java */</p>
+<p>public class EncapTest{</p>
+<p>   private String name;</p>
+<p>   private String idNum;</p>
+<p>   private int age;</p>
+<p>   public int getAge(){</p>
+<p>​      return age;</p>
+<p>   }</p>
+<p>   public String getName(){</p>
+<p>​      return name;</p>
+<p>   }</p>
+<p>   public String getIdNum(){</p>
+<p>​      return idNum;</p>
+<p>   }</p>
+<p>   public void setAge( int newAge){</p>
+<p>​      age = newAge;</p>
+<p>   }</p>
+<p>   public void setName(String newName){</p>
+<p>​      name = newName;</p>
+<p>   }</p>
+<p>   public void setIdNum( String newId){</p>
+<p>​      idNum = newId;</p>
+<p>   }</p>
+<p>}</p>
+<p>/* F文件名 : RunEncap.java */</p>
+<p>public class RunEncap{</p>
+<p>   public static void main(String args[]){</p>
+<p>​      EncapTest encap = new EncapTest();</p>
+<p>​      encap.setName(“James”);</p>
+<p>​      encap.setAge(20);</p>
+<p>​      encap.setIdNum(“12343ms”);</p>
+<p>​      System.out.print(“Name : “ + encap.getName()+ </p>
+<p>​                             “ Age : “+ encap.getAge());</p>
+<p>​    }</p>
+<p>}</p>
+<p>5.修饰符</p>
+<p>​      public—&gt;公共的：在一个项目中都可以访问，权限最高</p>
+<p>​      private—&gt;私有的：只能在本类中进行访问，权限最低</p>
+<p>​      protected—&gt;安全的，受保护的：同一个包能进行访问，继承中之类可以访问父类</p>
+<p>​      default—&gt;默认的：同一个包能访问</p>
+<p>  <strong>第四章 面向对象三大特征—继承</strong></p>
+<p>1.继承的概念：父亲儿子</p>
+<p>2.继承的关键字：extends</p>
+<p>3.继承的好处：</p>
+<p>   （1）提高了代码的重用性</p>
+<p>   （2）提高了代码的可扩展性</p>
+<p>3.继承的语法：</p>
+<p>​      public class 类名  extends 父类{    代码块   }</p>
+<p>4.继承的使用与说明：</p>
+<p>   （1）使用：</p>
+<p>可以直接调用父类的非私有属性和方法</p>
+<p>​         可以用super.方法     super.属性</p>
+<p>   （2）说明： Java中的继承只能单继承，</p>
+<p>5.父类构造方法调用：super();</p>
+<p>​     //super指代的是父类对象，this指代的是本类对象</p>
+<p>​      调用父类的构造方法必须在之类中调用</p>
+<p>​      必须实在之类构造方法的第一行代码</p>
+<p>6.继承中的构造方法要点：</p>
+<p>   （1）执行子类的构造方法，会默认执行父类的无参构造方法</p>
+<p>（2）当子类没有无参构造方法，但是有有参构造方法,子类的构造方法需手动添加</p>
+<p>（3）父类没有定义无参构造方法，定义了带参构造方法，子类的构造方法必须调用父类的带参构造方法。</p>
+<p>（4）无论是super还是this调用构造方法，只能放在第一行，构造方法只能调用一个</p>
+<p>   （5）构造方法只能在构造方法中调用</p>
+<p>7.重写@Override</p>
+<p>​      必须继承</p>
+<p>​      方法名一致，参数个数，顺序，类型全部一致</p>
+<p>8.重载与重写的区别：</p>
+<p>重载:一定发生在同一类中，方法名相同，参数不同（类型不同，数量不同）</p>
+<p>重写：一定发生在父类和子类中，方法名相同，参数相同，方法体不同</p>
+<p><strong>第五章 面向对象（多态）</strong></p>
+<p>1.多态的概念：不同对象对同一消息产生不同的响应。</p>
+<p>2.多态的必要条件</p>
+<p>   （1）继承</p>
+<p>   （2）重写</p>
+<p>   （3）父类引用指向子类对象（向上转型）</p>
+<p>3.多态的优点：</p>
+<p>   （1）消除类型之间的耦合关系</p>
+<p>   （2）可替换性</p>
+<p>   （3）可扩展性</p>
+<p>   （4）接口性</p>
+<p>   （5）灵活性</p>
+<p>   （6）简化性</p>
+<p>3.多态的使用</p>
+<p>   （1）第一个例子</p>
+<p>​      public class Father{</p>
+<p>​         public void cooking(){</p>
+<p>​            System.out.println(“米饭”);</p>
+<p>​         }</p>
+<p>​      }</p>
+<p>​      public class Son extends Father{</p>
+<p>​         @Override</p>
+<p>​         public void cooking(){</p>
+<p>​            System.out.println(“熬粥”);</p>
+<p>​         }</p>
+<p>​      }</p>
+<p>​      public class Test {</p>
+<p>​         public static void main(String[] args) {</p>
+<p>​            Father son=new Son();</p>
+<p>​            son.cooking();</p>
+<p>​         }</p>
+<p>​      }</p>
+<p>   （2）第二个例子</p>
+<p>   public class Test {</p>
+<p>​    public static void main(String[] args) {</p>
+<p>​      show(new Cat());  // 以 Cat 对象调用 show 方法</p>
+<p>​      show(new Dog());  // 以 Dog 对象调用 show 方法</p>
+<p>​                </p>
+<p>​      Animal a = new Cat();  // 向上转型  </p>
+<p>​      a.eat();               // 调用的是 Cat 的 eat</p>
+<p>​      Cat c = (Cat)a;        // 向下转型  </p>
+<p>​      c.work();        // 调用的是 Cat 的 work</p>
+<p>  }  </p>
+<p>​            </p>
+<p>​    public static void show(Animal a)  {</p>
+<p>​      a.eat();  </p>
+<p>​        // 类型判断</p>
+<p>​        if (a instanceof Cat)  {  // 猫做的事情 </p>
+<p>​            Cat c = (Cat)a;  </p>
+<p>​            c.work();  </p>
+<p>​        } else if (a instanceof Dog) { // 狗做的事情 </p>
+<p>​            Dog c = (Dog)a;  </p>
+<p>​            c.work();  </p>
+<p>​        }  </p>
+<p>​    }  </p>
+<p>}</p>
+<p>abstract class Animal {  </p>
+<p>​    abstract void eat();  </p>
+<p>}  </p>
+<p>class Cat extends Animal {  </p>
+<p>​    public void eat() {  </p>
+<p>​        System.out.println(“吃鱼”);  </p>
+<p>​    }  </p>
+<p>​    public void work() {  </p>
+<p>​        System.out.println(“抓老鼠”);  </p>
+<p>​    }  </p>
+<p>}  </p>
+<p>class Dog extends Animal {  </p>
+<p>​    public void eat() {  </p>
+<p>​        System.out.println(“吃骨头”);  </p>
+<p>​    }  </p>
+<p>​    public void work() {  </p>
+<p>​        System.out.println(“看家”);  </p>
+<p>​    }  </p>
+<p>}</p>
+<p>4.向上转型（子类向父类的转换）</p>
+<p>   语法 ：</p>
+<p>​      &lt;父类型&gt;  &lt;引用变量名&gt; = new  &lt;子类型&gt;（）；</p>
+<p>​      例如：Animal an1=new Dog（）；</p>
+<p>5.向下转型（必须基于向上转型）</p>
+<p>​      例如：Son son=(Son)father;</p>
+<p>6.注意：</p>
+<p>   （1）属性无多态这个属性，只看“=”左边的类型</p>
+<p>   （2）编译时，能“.”出来，能调用的看“=”左边</p>
+<p>7.Instanceof运算符：</p>
+<p>8.异常的处理（Try-catch-finally块）：</p>
+<p>语法：</p>
+<p>​      Try{</p>
+<p>​         代码块；</p>
+<p>}catch（Exception  e）{</p>
+<p>   代码块；</p>
+<p>}finally{</p>
+<p>   代码块；</p>
+<p>}</p>
+<p>注意：</p>
+<p>（1） catch（Exception  e）一定放在所有catch块的最后</p>
+<p>（2） finally{}块里面的代码一定会执行</p>
+<p>结束的语句：</p>
+<p>   （1）return；</p>
+<p>   （2）system.exit（0）;</p>
+<p><strong>第六章 抽象</strong></p>
+<p>1.抽象的概念:当一个类没有足够的信息去描述一个具体的对象，那么我们称之为抽象类。</p>
+<p>2.抽象的关键字</p>
+<p>​      abstract</p>
+<p>​      可以修饰类，可以修饰方法</p>
+<p>3.抽象类的作用：</p>
+<p>   （1）抽象类是用来继承的</p>
+<p>   （2）抽象类无法new出对象</p>
+<p>4.抽象的用法</p>
+<p>​      //抽象类</p>
+<p>​      public abstract class 类名{</p>
+<p>​         //抽象方法没有方法体</p>
+<p>​         public abstract void 方法名();   </p>
+<p>​      }</p>
+<p>​      //当父类是抽象类的时候，子类必须重写父类里面的抽象方法</p>
+<p>5.final修饰符：最终的</p>
+<p>   修饰变量，修饰方法，修饰类</p>
+<p>   （1）.当修饰变量时，变量转换成常量，常量的值不能改变</p>
+<p>​      final int a=18;//a=18;不能改变,必须给一个初始值</p>
+<p>   （2）.当修饰方法时，该方法不能被重写</p>
+<p>   （3）.当修饰类时，该类不能被继承</p>
+<p><strong>第七章 接口</strong></p>
+<p>为什么要用接口？：因为JAVA只支持单继承。</p>
+<p>\1.  接口的概念</p>
+<p>2.接口的关键字</p>
+<p>​      interface</p>
+<p>3.接口的语法</p>
+<p>​      public interface 接口名{}</p>
+<p>​      File—&gt;new—&gt;interface//创建接口</p>
+<p>4.接口的用法</p>
+<p>​      实现接口的关键字  implements</p>
+<p>​      public interface 接口名{</p>
+<p>​         //接口是纯抽象类</p>
+<p>​         //接口里面的方法都是抽象方法</p>
+<p>​         void setData();</p>
+<p>​      }</p>
+<p>​      public class Play implements 接口名{</p>
+<p>​         @Override</p>
+<p>​         void setData(){</p>
+<p>​         }</p>
+<p>​      }</p>
+<p>​      public class Test {</p>
+<p>​         public static void main(String[] args) {</p>
+<p>​            Play play=new Play();</p>
+<p>​            play.setData();</p>
+<p>​         }</p>
+<p>​      }</p>
+<p>​      注意接口可以进行多继承</p>
+<p>​      public interface 接口名 extends 接口名，接口名{}</p>
+<p>​      一般用法</p>
+<p>​      public class 类名 extends 父类 implements 接口，接口{}</p>
+<p>多态与接口的区别：</p>
+<p>（1） 多态：难</p>
+<p>（2） 接口：简单，不能随意定义属性和方法，只能定义抽象方法，并且实现对口必须重写。</p>
+<p> <strong>第八章 集合框架</strong></p>
+<p>1.ArrayList</p>
+<p>  1.用法</p>
+<p>   ArrayList list=new ArrayList();</p>
+<p>   list.add();//添加数据</p>
+<p>   list.get();//获取数据</p>
+<p>2.Map的用法：</p>
+<p>​      Map map=new HasMap();</p>
+<p>​      map.put(key,value);//key不能重复</p>
+<p>​      map.get(key);//获取key对象的value</p>
+<p>3.泛型</p>
+<p>   ArrayList<string> list=new ArrayList&gt;<string>();</string></string></p>
+<p>   Map&lt;String,String&gt; map=new HasMap&lt;String,String&gt;();</p>
+<p>   ArrayList&lt;Map&lt;String,String&gt;&gt; list=new ArrayList&gt;&lt;Map&lt;String,String&gt;&gt;();</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/11/JAVA知识点总结/" data-id="ck1lk0h8w00007cuhr0jd7dg9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/11/JAVA知识点总结/" data-id="ck1lkhp8f0001fwuh7pg7b60c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -134,8 +384,8 @@
   
     <article id="post-我的第一篇博客" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/10/10/我的第一篇博客/" class="article-date">
-  <time datetime="2019-10-10T05:42:02.000Z" itemprop="datePublished">2019-10-10</time>
+    <a href="/2019/10/11/我的第一篇博客/" class="article-date">
+  <time datetime="2019-10-11T03:20:08.000Z" itemprop="datePublished">2019-10-11</time>
 </a>
     
   </div>
@@ -146,7 +396,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/10/我的第一篇博客/">我的第一篇博客</a>
+      <a class="article-title" href="/2019/10/11/我的第一篇博客/">我的第一篇博客</a>
     </h1>
   
 
@@ -154,62 +404,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="你好呀！"><a href="#你好呀！" class="headerlink" title="你好呀！"></a>你好呀！</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(<span class="string">"小可爱！"</span>);</span><br></pre></td></tr></table></figure>
+        <h3 id="我的第一篇博客"><a href="#我的第一篇博客" class="headerlink" title="我的第一篇博客"></a>我的第一篇博客</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(<span class="string">"小可爱，你好呀"</span>);</span><br></pre></td></tr></table></figure>
 
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/10/我的第一篇博客/" data-id="ck1lk0h9i00017cuhur28a97o" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/10/10/hello-world/" class="article-date">
-  <time datetime="2019-10-10T05:07:12.135Z" itemprop="datePublished">2019-10-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/10/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/10/hello-world/" data-id="ck1lk0ha600027cuhngnzxwx8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/11/我的第一篇博客/" data-id="ck1lkhp7h0000fwuhyviukcfw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -254,11 +455,7 @@
           </li>
         
           <li>
-            <a href="/2019/10/10/我的第一篇博客/">我的第一篇博客</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/10/hello-world/">Hello World</a>
+            <a href="/2019/10/11/我的第一篇博客/">我的第一篇博客</a>
           </li>
         
       </ul>
