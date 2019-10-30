@@ -30,7 +30,7 @@
 
 
 <body>
-  <header style="height: 100vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -101,12 +101,11 @@
             </span>
 
             
+              <br>
+              <p class="mt-3">星期三, 十月 30日 2019, 2:55 下午</p>
+            
           </div>
 
-          
-            <div class="scroll-down-bar">
-              <i class="fa fa-angle-down scroll-down-arrow"></i>
-            </div>
           
         </div>
       </div>
@@ -115,29 +114,18 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
+      
 
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/10/30/Request案例/">
-        <p class="h4 index-header"></p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">Request案例代码：
-（1）index.jsp
-&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto">
+          <div class="markdown-body">
+            <p>Request案例代码：</p>
+<p>（1）index.jsp</p>
+<pre><code class="jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
     pageEncoding=&quot;UTF-8&quot;%&gt;
 &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
 &lt;html&gt;
@@ -146,102 +134,85 @@
 &lt;title&gt;Hello&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;form action=&quot;NewFile.jsp&</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-10-30&nbsp;&nbsp;
-        
-        
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/10/11/JAVA知识点总结/">
-        <p class="h4 index-header">JAVA知识点总结</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">第二章面向对象1.面向对象：面向对象思想就是把一个项目，一件事情分成更小的项目，每一部分负责什么功能，最后再有这些部分组合成一个整体。
-2.类的创建
-    语法：public class 类名{}
-
-​      File---&gt;new---&gt;class---&gt;类名
-​      
-3.创建对象
-类名 对象名=new 类名();
-
-​      对象名.方法名(); 对象名.属性4.构造方法：方法名和类名相同,没有返回值
-     public class 类名{
-
-​         public 类名(){}//主要的做用是初始化操作
-
-​      }5.构造方法重载
-（1）构造方法的重载：方法名与类名相同，参数列表不同
-（2）方法的重载：在同一个类中包含了两个或者两个以上的方法，它们的方法名相同，方法的参数个数，顺序，类型不同，则称这个方法被重载了，这个过程称为方法的重载。
-（3）构造方法的作用：用来实现多种初始化行为。
-    public class 类名{
-
-​         public 类名(){}
-
-​         public 类名(St</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-10-11&nbsp;&nbsp;
-        
-        
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/10/11/我的第一篇博客/">
-        <p class="h4 index-header">我的第一篇博客</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">我的第一篇博客System.out.println(&quot;小可爱，你好呀&quot;);
-</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-10-11&nbsp;&nbsp;
-        
-        
-        
-      </div>
-    </div>
-  </div>
+    &lt;form action=&quot;NewFile.jsp&quot; meshod=&quot;post&quot;&gt;
+        用户名：&lt;input type=&quot;text&quot; name=&quot;user&quot;&gt;&lt;br&gt;
+        密码：&lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;&lt;br&gt;
+        多选：&lt;br&gt;
+        &lt;input type=&quot;checkbox&quot; name=&quot;dx&quot; value=&quot;唱&quot;&gt;唱
+        &lt;input type=&quot;checkbox&quot; name=&quot;dx&quot; value=&quot;跳&quot;&gt;跳
+        &lt;input type=&quot;checkbox&quot; name=&quot;dx&quot; value=&quot;rap&quot;&gt;rap
+        &lt;input type=&quot;checkbox&quot; name=&quot;dx&quot; value=&quot;篮球&quot;&gt;篮球
+        &lt;br&gt;
+        &lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;提交&quot;&gt;
+        &lt;input type=&quot;reset&quot; name=&quot;reset&quot; value=&quot;取消&quot;&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>（2）NewFile.jsp</p>
+<pre><code>&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot;%&gt;
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
+&lt;% 
+request.setCharacterEncoding(&quot;UTF-8&quot;);
+String name=request.getParameter(&quot;user&quot;);
+String pwd=request.getParameter(&quot;password&quot;);
+String [] y=request.getParameterValues(&quot;dx&quot;);
+%&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
+&lt;title&gt;Insert title here&lt;/title&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
 
 
-
-
-
-              </div>
-            </div>
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    用户名是：&lt;%=name %&gt;&lt;br&gt;
+    密码是：&lt;%=pwd %&gt;&lt;br&gt;
+    信息来源是：&lt;% for(int i=0;i&lt;y.length;i++){
+        out.println(y[i]);
+    } %&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <hr>
+          </div>
+          <br>
+          <div>
+            
+            <p>
+              <i class="iconfont icon-tag"></i>
+              
+            </p>
+            
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://pic.sogou.com/d?query=%CD%BC%C6%AC&st=0&mode=1&mood=0&dm=4&cwidth=150&cheight=150&did=22#did21" rel="nofollow noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+            
           </div>
         </div>
       </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+  </div>
+</div>
+
     
   </main>
 
@@ -294,6 +265,11 @@
 
   <script src="/js/lazyload.js" ></script>
 
+
+  
+    <script src="/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
 
 
   <script src="/lib/prettify/prettify.min.js" ></script>

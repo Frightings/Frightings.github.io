@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title></title>
+    <link href="undefined2019/10/30/Request%E6%A1%88%E4%BE%8B/"/>
+    <url>2019/10/30/Request%E6%A1%88%E4%BE%8B/</url>
+    
+    <content type="html"><![CDATA[<p>Request案例代码：</p><p>（1）index.jsp</p><pre><code class="jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;    pageEncoding=&quot;UTF-8&quot;%&gt;&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;&lt;html&gt;&lt;head&gt;&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;&lt;title&gt;Hello&lt;/title&gt;&lt;/head&gt;&lt;body&gt;    &lt;form action=&quot;NewFile.jsp&quot; meshod=&quot;post&quot;&gt;        用户名：&lt;input type=&quot;text&quot; name=&quot;user&quot;&gt;&lt;br&gt;        密码：&lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;&lt;br&gt;        多选：&lt;br&gt;        &lt;input type=&quot;checkbox&quot; name=&quot;dx&quot; value=&quot;唱&quot;&gt;唱        &lt;input type=&quot;checkbox&quot; name=&quot;dx&quot; value=&quot;跳&quot;&gt;跳        &lt;input type=&quot;checkbox&quot; name=&quot;dx&quot; value=&quot;rap&quot;&gt;rap        &lt;input type=&quot;checkbox&quot; name=&quot;dx&quot; value=&quot;篮球&quot;&gt;篮球        &lt;br&gt;        &lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;提交&quot;&gt;        &lt;input type=&quot;reset&quot; name=&quot;reset&quot; value=&quot;取消&quot;&gt;    &lt;/form&gt;&lt;/body&gt;&lt;/html&gt;</code></pre><p>（2）NewFile.jsp</p><pre><code>&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;    pageEncoding=&quot;UTF-8&quot;%&gt;&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;&lt;% request.setCharacterEncoding(&quot;UTF-8&quot;);String name=request.getParameter(&quot;user&quot;);String pwd=request.getParameter(&quot;password&quot;);String [] y=request.getParameterValues(&quot;dx&quot;);%&gt;&lt;html&gt;&lt;head&gt;&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;&lt;title&gt;Insert title here&lt;/title&gt;&lt;script type=&quot;text/javascript&quot;&gt;&lt;/script&gt;&lt;/head&gt;&lt;body&gt;    用户名是：&lt;%=name %&gt;&lt;br&gt;    密码是：&lt;%=pwd %&gt;&lt;br&gt;    信息来源是：&lt;% for(int i=0;i&lt;y.length;i++){        out.println(y[i]);    } %&gt;&lt;/body&gt;&lt;/html&gt;</code></pre>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>JAVA知识点总结</title>
     <link href="undefined2019/10/11/JAVA%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/"/>
     <url>2019/10/11/JAVA%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/</url>
