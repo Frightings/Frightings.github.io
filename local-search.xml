@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>数据库案例</title>
+    <link href="undefined2019/10/31/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A1%88%E4%BE%8B/"/>
+    <url>2019/10/31/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A1%88%E4%BE%8B/</url>
+    
+    <content type="html"><![CDATA[<h3 id="Mysql的案例与基本操作："><a href="#Mysql的案例与基本操作：" class="headerlink" title="Mysql的案例与基本操作："></a>Mysql的案例与基本操作：</h3><p>步骤：</p><pre><code class="sql">1.create database schooldb;</code></pre><pre><code>2.use schooldb;</code></pre><pre><code>3.create table stuinfo(    number int auto_increment primary key,    name varchar(25) not null,    adress varchar(25),    score int,    rank int);</code></pre><pre><code>4.desc stuinfo;（显示表结构）</code></pre><pre><code>5.insert into stuinfo(number,name,adress,score,rank) values  (01,&#39;刘硕&#39;,&#39;镇平张林&#39;,98,1);</code></pre><pre><code>6.insert into stuinfo(name,adress,score,rank) values  (&#39;张&#39;,&#39;镇平晁陂&#39;,80,3),  (&#39;肖&#39;,&#39;镇平卢医&#39;,86,2);</code></pre><h3 id="一、关于数据库的基本操作"><a href="#一、关于数据库的基本操作" class="headerlink" title="一、关于数据库的基本操作"></a>一、关于数据库的基本操作</h3><p>创建数据库 -&gt;create database + 数据库名称<br>查看数据库 -&gt;show databases<br>删除数据库 -&gt;drop database + 数据库名称<br>使用数据库 -&gt;use + 数据库名称<br>查看创建数据库的详细信息-&gt;show create databases + 数据库名称<br>二、关于表的基本操作</p><p>显示数据库中的表：show tables<br>显示表的字段：desc + 表名称<br>删除表：drop table + 表名称<br>创建表：create table + 表名称（字段一 类型一，字段二 类型二）<br>查看创建表的详细信息：show create table + 表名称<br>三、修改表结构的操作</p><p>修改表字段的类型-&gt;alter table +表名称+ modify +字段+字段类型<br>添加表的字段-&gt; alter table + 表名称 + add +字段+字段类型<br>添加字段到指定位置-&gt;alter table +表名称 + add +字段+字段类型 +after 字段<br>删除表字段-&gt;alter table + 表名称 +drop +字段名称<br>修改指定字段名称-&gt;alter table +表名称 + change +原字段名称 +新字段名称 + 字段类型<br>四、基本操作–增、删、改、查</p><p>“增”—insert<br>（1） 对一行所有字段增加数据<br>语法：insert into +表名称 + values（值1，值2，……）<br>（2） 对指定字段增加数据<br>语法：insert into +表名称 +（字段1，字段2，……）+ values +（值1，值2，……）<br>“删”—delete<br>（1）删除表中指定数据<br>语法：delete from +表名称 +where条件表达式<br>（2）删除表中全部数据<br>语法：delete from +表名称<br>“改”—update<br>（1）修改表中现存数据<br>语法：update +表名称 +set 字段1=值1,字段2=值2 +where条件<br>PS：若不带where条件，则是对整表记录指定字段进行更新。<br>“查”—select<br>（1）select的简单查询<br>语法：select +字段1，字段2，字段3 +from +表名称 +where条件<br>PS：若查询全表信息则将所有字段名换为通配符 *。</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>自学PS</title>
     <link href="undefined2019/10/31/%E8%87%AA%E5%AD%A6PS/"/>
     <url>2019/10/31/%E8%87%AA%E5%AD%A6PS/</url>

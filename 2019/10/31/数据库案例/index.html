@@ -14,7 +14,7 @@
   <meta name="description" content>
   <meta name="author" content="John Doe">
   <meta name="keywords" content>
-  <title>归档 ~ Hexo</title>
+  <title>数据库案例 ~ Hexo</title>
   <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
   <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css">
@@ -30,7 +30,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -101,6 +101,9 @@
             </span>
 
             
+              <br>
+              <p class="mt-3">星期四, 十月 31日 2019, 11:06 上午</p>
+            
           </div>
 
           
@@ -111,71 +114,69 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 7 篇文章</p>
-  <hr>
-  
-    
       
-      <p class="h5">2019</p>
-    
-    <a href="/2019/10/31/数据库案例/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">数据库案例</span>
-      <span style="float: right;">10-31</span>
-    </a>
-  
-    
-    <a href="/2019/10/31/自学PS/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">自学PS</span>
-      <span style="float: right;">10-31</span>
-    </a>
-  
-    
-    <a href="/2019/10/30/Request案例/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Request案例</span>
-      <span style="float: right;">10-30</span>
-    </a>
-  
-    
-    <a href="/2019/10/29/MYSQL数据库/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">MYSQL数据库</span>
-      <span style="float: right;">10-29</span>
-    </a>
-  
-    
-    <a href="/2019/10/27/web知识点总结/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">web知识点总结</span>
-      <span style="float: right;">10-27</span>
-    </a>
-  
-    
-    <a href="/2019/10/11/JAVA知识点总结/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">JAVA知识点总结</span>
-      <span style="float: right;">10-11</span>
-    </a>
-  
-    
-    <a href="/2019/10/11/我的第一篇博客/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">我的第一篇博客</span>
-      <span style="float: right;">10-11</span>
-    </a>
-  
-</div>
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto">
+          <div class="markdown-body">
+            <h3 id="Mysql的案例与基本操作："><a href="#Mysql的案例与基本操作：" class="headerlink" title="Mysql的案例与基本操作："></a>Mysql的案例与基本操作：</h3><p>步骤：</p>
+<pre><code class="sql">1.create database schooldb;</code></pre>
+<pre><code>2.use schooldb;</code></pre><pre><code>3.create table stuinfo
+(
+    number int auto_increment primary key,
+    name varchar(25) not null,
+    adress varchar(25),
+    score int,
+    rank int
+);</code></pre><pre><code>4.desc stuinfo;（显示表结构）</code></pre><pre><code>5.insert into stuinfo(number,name,adress,score,rank) values
+  (01,&#39;刘硕&#39;,&#39;镇平张林&#39;,98,1);</code></pre><pre><code>6.insert into stuinfo(name,adress,score,rank) values
+  (&#39;张&#39;,&#39;镇平晁陂&#39;,80,3),
+  (&#39;肖&#39;,&#39;镇平卢医&#39;,86,2);</code></pre><h3 id="一、关于数据库的基本操作"><a href="#一、关于数据库的基本操作" class="headerlink" title="一、关于数据库的基本操作"></a>一、关于数据库的基本操作</h3><p>创建数据库 -&gt;create database + 数据库名称<br>查看数据库 -&gt;show databases<br>删除数据库 -&gt;drop database + 数据库名称<br>使用数据库 -&gt;use + 数据库名称<br>查看创建数据库的详细信息-&gt;show create databases + 数据库名称<br>二、关于表的基本操作</p>
+<p>显示数据库中的表：show tables<br>显示表的字段：desc + 表名称<br>删除表：drop table + 表名称<br>创建表：create table + 表名称（字段一 类型一，字段二 类型二）<br>查看创建表的详细信息：show create table + 表名称<br>三、修改表结构的操作</p>
+<p>修改表字段的类型-&gt;alter table +表名称+ modify +字段+字段类型<br>添加表的字段-&gt; alter table + 表名称 + add +字段+字段类型<br>添加字段到指定位置-&gt;alter table +表名称 + add +字段+字段类型 +after 字段<br>删除表字段-&gt;alter table + 表名称 +drop +字段名称<br>修改指定字段名称-&gt;alter table +表名称 + change +原字段名称 +新字段名称 + 字段类型<br>四、基本操作–增、删、改、查</p>
+<p>“增”—insert<br>（1） 对一行所有字段增加数据<br>语法：insert into +表名称 + values（值1，值2，……）<br>（2） 对指定字段增加数据<br>语法：insert into +表名称 +（字段1，字段2，……）+ values +（值1，值2，……）<br>“删”—delete<br>（1）删除表中指定数据<br>语法：delete from +表名称 +where条件表达式<br>（2）删除表中全部数据<br>语法：delete from +表名称<br>“改”—update<br>（1）修改表中现存数据<br>语法：update +表名称 +set 字段1=值1,字段2=值2 +where条件<br>PS：若不带where条件，则是对整表记录指定字段进行更新。<br>“查”—select<br>（1）select的简单查询<br>语法：select +字段1，字段2，字段3 +from +表名称 +where条件<br>PS：若查询全表信息则将所有字段名换为通配符 *。</p>
 
-              </div>
-            </div>
+            <hr>
+          </div>
+          <br>
+          <div>
+            
+            <p>
+              <i class="iconfont icon-tag"></i>
+              
+            </p>
+            
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://pic.sogou.com/d?query=%CD%BC%C6%AC&st=0&mode=1&mood=0&dm=4&cwidth=150&cheight=150&did=22#did21" rel="nofollow noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+            
           </div>
         </div>
       </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+  </div>
+</div>
+
     
   </main>
 
@@ -229,6 +230,11 @@
   <script src="/js/lazyload.js" ></script>
 
 
+  
+    <script src="/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
 
   <script src="/lib/prettify/prettify.min.js" ></script>
   <script>
@@ -244,7 +250,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "归档&nbsp;",
+        "数据库案例&nbsp;",
       ],
       cursorChar: "小可爱",
       typeSpeed: 10,
