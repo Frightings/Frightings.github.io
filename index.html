@@ -128,34 +128,30 @@
     
     
     <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/11/01/Cookie对象的常用方法/">
+      <a href="/2019/11/03/Request与Cookie对象的常用方法案例/">
         <p class="h4 index-header">Cookie对象的常用方法</p>
         
         
           
         
         <div class="index-excerpt" >
-          <div class="index-text mb-1">Cookie对象的常用方法案例：1.自动登录
-&lt;%@ page language=&quot;java&quot; import=&quot;java.util.*&quot; pageEncoding=&quot;UTF-8&quot;%&gt;
-&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;&gt;
+          <div class="index-text mb-1">Request与Cookie对象案例Request案例代码：（1）index.jsp
+&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot;%&gt;
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
 &lt;html&gt;
-  &lt;head&gt;
-    &lt;title&gt;登录页面&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-  &lt;%
-     String username =&quot;&quot;;
-     //读取所有cookie ，返回cookie数组
-     Cookie[] cookies = request.getCookies();
-     //遍历cookies数组
-     if(cookies !=null){
-        for(int i=0;i&lt;cookies.</div>
+&lt;head&gt;
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
+&lt;title&gt;Hello&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form action=&</div>
         </div>
       </a>
 
       <div>
         
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-01&nbsp;&nbsp;
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-03&nbsp;&nbsp;
         
         
         
@@ -167,44 +163,7 @@
     
     
     <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/10/31/数据库案例/">
-        <p class="h4 index-header">数据库案例</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">Mysql的案例与基本操作：步骤：
-1.create database schooldb;
-2.use schooldb;3.create table stuinfo
-(
-    number int auto_increment primary key,
-    name varchar(25) not null,
-    adress varchar(25),
-    score int,
-    rank int
-);4.desc stuinfo;（显示表结构）5.insert into stuinfo(number,name,adress,score,rank) values
-  (01,&#39;刘硕&#39;,&#39;镇平张林&#39;,98,1);6.insert into stuinfo(name,adress,score,rank) values
-  (&#39;张&#39;,&#39;镇平晁陂&#39;,80,3),
-  (&#39;肖&#39;,&#39;镇平卢医&#39;,86,2);一、关于数据库的基本操作创建数据库 -&gt;create database</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-10-31&nbsp;&nbsp;
-        
-        
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/10/31/自学PS/">
+      <a href="/2019/11/02/自学PS/">
         <p class="h4 index-header">自学PS</p>
         
         
@@ -223,6 +182,77 @@ c+s+u去色ctrl+j复制图层ctrl+i反向
 
       <div>
         
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-02&nbsp;&nbsp;
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/11/01/Eclipse连接Mysql数据库/">
+        <p class="h4 index-header">Eclipse连接Mysql数据库</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">Eclipse连接数据库步骤1、先下载JDBC：JDBC代表Java数据库连接(Java Database Connectivity)，它是用于Java编程语言和数据库之间的数据库无关连接的标准Java API，换句话说：JDBC是用于在Java语言编程中与数据库连接的API。
+到www.mvnrepository.com
+2、打开ECLIPSE,创建一个DYNAMIC WEB PROJECT项目在lib中插入mysql-connector文件
+3.打开 NEWFILE.JSP文件插入下面代码 更改相应信息即可
+&lt;%
+    String driver = &quot;com.mysql.jdbc.Driver&quot;;
+    // URL指向要访问的数据库名test1
+    String url = &quot;jdbc:mysql://localhost:3306/schooldb&quot;;
+    // MySQL配置时的用户名
+    String user = &quot;root&quot;;
+    // Java连接MySQL配置时的密码
+    St</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-01&nbsp;&nbsp;
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/10/31/Github博客搭建步骤/">
+        <p class="h4 index-header">Github博客搭建步骤</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">Github个人技术博客搭建步骤一、前期准备1、GitHub账号
+注册地址：https://github.com/
+2、Node.js环境
+下载地址：https://nodejs.org/download/
+3、Git 软件：下载地址http://git-scm.com/download/
+二、软件安装1、注册GitHub账号
+1)Github账户注册和新建项目，项目必须要遵守格式：账户名.github.io，此处账号名作为后期个人博客的地址使用2。并且需要勾选Initialize this repository with a README。（如果没有勾选，后期要创建README文件即可）
+2)创建一个新的repository(代码仓库), 注意，名称必须是xxx.github.io 格式，并且xxx必须是你在GitHub的用户名。
+3)在建好的项目右侧有个settings按钮，点击它，向下拉到GitHub Pages，你会看到那边有个网址，可以访问它。你将会惊奇的发现该项目已经被部署到网络上，能够通过外网来访问它。
+2.安装Node.js
+在node.js指定地址下载，采用最新的版本</div>
+        </div>
+      </a>
+
+      <div>
+        
           <i class="iconfont icon-riqi2"></i>&nbsp;2019-10-31&nbsp;&nbsp;
         
         
@@ -235,103 +265,7 @@ c+s+u去色ctrl+j复制图层ctrl+i反向
     
     
     <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/10/30/Request案例/">
-        <p class="h4 index-header">Request案例</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">Request案例代码：（1）index.jsp
-&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
-    pageEncoding=&quot;UTF-8&quot;%&gt;
-&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
-&lt;title&gt;Hello&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;form action=&quot;NewFile.jsp&q</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-10-30&nbsp;&nbsp;
-        
-        
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/10/29/MYSQL数据库/">
-        <p class="h4 index-header">MYSQL数据库</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">MySQL数据库增删改查SQL语句查看数据库show databases; 
-使用数据库use 数据库名;
-创建数据库CREATE DATABASE 数据库名;
-删除数据库DROP DATABASE 数据库名;
-创建表create table 表名(    列名1 类型(长度) [约束],    列名2 类型(长度) [约束],    ……);
-长度区别int类型带长度：不影响存取值，即使设定的值超出了长度的范畴，也能存，如果没有达到设定的长度，则使用空格自动填充到设定的长度char类型：不可变字符，设定的长度就是规定当前字段能存的数据的最大长度，若超出长度，则会报错，若没有达到长度，使用空格填充到设定的长度varchar：可变字符，设定的长度同样是规定当前字段能存的数据的最大长度，若超出长度，则会报错，若没有达到长度，不会使用空格填充，实际多长就是多长
-删除表DROP TABLE 表名;
-表约束1.非空约束    NOT NULL
-2.默认值约束  DEFAULT ‘男’
-3.唯一约束    UNIQUE4.主键约束    PRIMARY KEY
-查看表结构DESC 表名
-修改表修改</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-10-29&nbsp;&nbsp;
-        
-        
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/10/27/web知识点总结/">
-        <p class="h4 index-header">web知识点总结</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">知识点总结：1、HTML–超文本标记语言，以.html为扩展名。.htm网页文件   浏览器–IE浏览器、FF火狐浏览器、Chrome谷歌浏览器、Safari苹果浏览器、O欧朋浏览器   不同的浏览器，显示的效果不同，通常和浏览器或设备的宽度有关。   什么是HTML？   html语言–表名学习重点是代码部分。   标记–生成网页的代码都是单独出现或成对出现的。   例如： –成对出现    –单独出现   超文本–网页中内容一般都是超链接，网页中各种元素都以文本的方式去描述。   一首歌曲–D:/MP3/1.MP3，文本用路径把歌曲放在网页中执行2、编写代码工具：HBuilder   使用工具的方法：左侧项目管理器中—右键—新建web项目—项目名称（basic基本的、project项目、demo示例）—选择路径，尽量使用其他盘，不要放C盘或桌面—创建成功，相应的路径部分生成文件，css目录保存网页中的样式，img目录存放网页中的图片，js目录存放网页脚本，index.html文件是网页的入口文件，也叫索引文件，整个网页浏览依靠这个index.html文件。  注意：站点名称不能是汉</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-10-27&nbsp;&nbsp;
-        
-        
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/10/11/JAVA知识点总结/">
+      <a href="/2019/10/30/JAVA知识点总结/">
         <p class="h4 index-header">JAVA知识点总结</p>
         
         
@@ -366,7 +300,103 @@ c+s+u去色ctrl+j复制图层ctrl+i反向
 
       <div>
         
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-10-11&nbsp;&nbsp;
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-10-30&nbsp;&nbsp;
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/10/29/MYSQL数据库知识点总结/">
+        <p class="h4 index-header">MYSQL数据库</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">Mysql数据库知识点总结第一章1.如何在命令行配置MYSQL数据库1）找到MYSQL安装目录的bin目录
+2）放置到path环境变量中
+2.启动停止MYSQL启动： netstarmysqla 停止：mysql net stop mysqla
+3.数据类型binary,int,float,double,char,varchar,text,datetime
+4.添加数据库create database 数据库名;
+5.查看数据库show databases;
+show create database;
+6.删除数据drop database 数据库名;7.使用数据库前需要先打开数据表所在的数据库use 数据库名;8.创建表create table 表名(字段1 类型（长度）,[约束]，.....);9.查询当前数据库下有哪些表show tables;10.查询表结构sesc student;11.据库备份与还原mysqldump-uroot-p first-db&gt;C:123456.sql第二章1.数据库没有大小写之分
+2.关键词大写，自定义的小写3.修改表内容的关键词
+alter</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-10-29&nbsp;&nbsp;
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/10/28/数据库基本案例/">
+        <p class="h4 index-header">数据库案例</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">Mysql的案例与基本操作：步骤：
+1.create database schooldb;
+2.use schooldb;3.create table stuinfo
+(
+    number int auto_increment primary key,
+    name varchar(25) not null,
+    adress varchar(25),
+    score int,
+    rank int
+);4.desc stuinfo;（显示表结构）5.insert into stuinfo(number,name,adress,score,rank) values
+  (01,&#39;刘硕&#39;,&#39;镇平张林&#39;,98,1);6.insert into stuinfo(name,adress,score,rank) values
+  (&#39;张&#39;,&#39;镇平晁陂&#39;,80,3),
+  (&#39;肖&#39;,&#39;镇平卢医&#39;,86,2);一、关于数据库的基本操作创建数据库 -&gt;create database</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-10-28&nbsp;&nbsp;
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/10/27/web知识点总结/">
+        <p class="h4 index-header">web知识点总结</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">知识点总结：1、HTML–超文本标记语言，以.html为扩展名。.htm网页文件   浏览器–IE浏览器、FF火狐浏览器、Chrome谷歌浏览器、Safari苹果浏览器、O欧朋浏览器   不同的浏览器，显示的效果不同，通常和浏览器或设备的宽度有关。   什么是HTML？   html语言–表名学习重点是代码部分。   标记–生成网页的代码都是单独出现或成对出现的。   例如： –成对出现    –单独出现   超文本–网页中内容一般都是超链接，网页中各种元素都以文本的方式去描述。   一首歌曲–D:/MP3/1.MP3，文本用路径把歌曲放在网页中执行2、编写代码工具：HBuilder   使用工具的方法：左侧项目管理器中—右键—新建web项目—项目名称（basic基本的、project项目、demo示例）—选择路径，尽量使用其他盘，不要放C盘或桌面—创建成功，相应的路径部分生成文件，css目录保存网页中的样式，img目录存放网页中的图片，js目录存放网页脚本，index.html文件是网页的入口文件，也叫索引文件，整个网页浏览依靠这个index.html文件。  注意：站点名称不能是汉</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-10-27&nbsp;&nbsp;
         
         
         
