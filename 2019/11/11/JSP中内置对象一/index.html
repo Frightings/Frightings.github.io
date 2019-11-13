@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content>
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content>
+  <title>JSP中内置对象一 ~ Hexo</title>
+  <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css">
+  <link rel="stylesheet" href="/lib/github-markdown/github-markdown.min.css">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+  
+    <link rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css">
+  
+  <link rel="stylesheet" href="/css/main.css">
+
+  
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Hexo</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">Archives</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/categories/">Categories</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">Tags</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">About</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+</nav>
+
+    <div class="view intro-2" id="background"
+         style="background: url('/img/default.jpg')no-repeat center center;
+           background-size: cover;
+           background-attachment: fixed;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <br>
+              <p class="mt-3">星期一, 十一月 11日 2019, 2:16 下午</p>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto">
+          <div class="markdown-body">
+            <h2 id="JSP内置对象"><a href="#JSP内置对象" class="headerlink" title="JSP内置对象"></a>JSP内置对象</h2><h3 id="一-内置对象"><a href="#一-内置对象" class="headerlink" title="一.内置对象"></a>一.内置对象</h3><h4 id="1-什么是内置对象"><a href="#1-什么是内置对象" class="headerlink" title="1.什么是内置对象"></a>1.什么是内置对象</h4><p>在jsp开发中会频繁使用到一些对象,如ServletContext HttpSession PageContext等.如果每次我们在jsp页面中需要使用这些对象都要自己亲自动手创建就会特别的繁琐.SUN公司因此在设计jsp时,在jsp页面加载完毕之后自动帮开发者创建好了这些对象,开发者只需要使用相应的对象调用相应的方法即可.这些系统创建好的对象就叫做内置对象。</p>
+<h4 id="2-内置对象（又叫隐含对象-优点"><a href="#2-内置对象（又叫隐含对象-优点" class="headerlink" title="2.内置对象（又叫隐含对象)优点"></a>2.内置对象（又叫隐含对象)优点</h4><pre><code>1. 由JSP规范提供,不用编写者实例化。 
+2. 通过Web容器实现和管理 
+3. 所有JSP页面均可使用 
+4. 只有在脚本元素的表达式或代码段中才可使用(&lt;%=使用内置对象%&gt;或&lt;%使用内置对象%&gt;)</code></pre><h4 id="3-JSP内置对象包括"><a href="#3-JSP内置对象包括" class="headerlink" title="3.JSP内置对象包括"></a>3.JSP内置对象包括</h4><pre><code>（1）request            获取用户的请求信息，向客户端请求数据
+（2）response            服务器向客户端的回应信息封装了jsp产生的响应,然后被发送到客户端以响应客户的请求
+（3）out                向客户端输出数据
+（4）session            用来保存每个用户的信息,以便跟踪每个用户的操作状态
+（5）application        表示所有用户的共享信息，应用程序对象
+（6）config            服务器配置信息，可以取得初始化参数
+（7）pageContext        提供了对jsp页面所有对象以及命名空间的访问。
+（8）page                Jsp实现类的实例,它是jsp本身,类似于Java类中的this关键字
+（9）Exception        反映运行的异常</code></pre><h4 id="4-JSP九大内置对象分为四类："><a href="#4-JSP九大内置对象分为四类：" class="headerlink" title="4.JSP九大内置对象分为四类："></a>4.JSP九大内置对象分为四类：</h4><pre><code>输入输出对象：out对象、response对象、request对象
+通信控制对象：pageContext对象、session对象、application对象
+Servlet对象:page对象、config对象
+错误处理对象：exception对象</code></pre><h4 id="5-注意："><a href="#5-注意：" class="headerlink" title="5.注意："></a>5.注意：</h4><pre><code>在这9个对象中有很多是极少会被使用的，例如：config、page、exception基本不会使用。
+在这9个对象中有两个对象不是每个JSP页面都可以使用的：exception、session。
+在这9个对象中有很多前面已经学过的对象：out、request、response、application、session、config。</code></pre><h3 id="二-详细介绍"><a href="#二-详细介绍" class="headerlink" title="二.详细介绍"></a>二.详细介绍</h3><h4 id="1-request对象"><a href="#1-request对象" class="headerlink" title="1.request对象"></a>1.request对象</h4><hr>
+<p>request 对象是 javax.servlet.httpServletRequest类型的对象（客户端的请求信息被封装在request对象中）。 该对象代表了客户端的请求信息，主要用于接受通过HTTP协议传送到服务器的数据。（包括头信息、系统信息、请求方式以及请求参数等）。request对象的作用域为一次请求。</p>
+<h5 id="（1）request对象常用方法"><a href="#（1）request对象常用方法" class="headerlink" title="（1）request对象常用方法"></a>（1）request对象常用方法</h5><pre><code>getParameter：根据页面表单组件名称获取页面提交数据
+
+getParameterValues ： 获取一组以相同名称命名的表单组件提交的数据。
+
+setCharacterEncoding ：用于解决乱码问题，可以设置请求的编码。
+
+getRequestDispatcher ：返回一个对象，该对象的forward方法用于转发请求。</code></pre><h5 id="（2）request对象其他方法（不太常用）"><a href="#（2）request对象其他方法（不太常用）" class="headerlink" title="（2）request对象其他方法（不太常用）"></a>（2）request对象其他方法（不太常用）</h5><pre><code>（1）String getParameter(String name) 返回name指定参数的参数值；
+
+（2）String[ ] getParameterValues(String name) 返回包含参数name的所有值的数组；
+
+（3）void setAttribute(String,Object);存储此请求中的属性；
+
+（4）object getAttribute(String name);返回指定属性的属性值；
+
+（5）String getContentType(); 得到请求体的MIME类型；
+
+（6）String getProtocol(); 返回请求用的协议类型及版本号；
+
+（7）String getServerName(); 返回接受请求的服务器主机名；
+
+（8）int getServerPort() 返回服务器接受此请求所用的端口号；
+
+（9）String getCharacterEncoding() 返回字符编码方式；
+
+（10）void setCharacterEncoding() 设置请求的字符编码方式；
+
+（11）int getContentLength() 返回请求体的长度（以字节数）
+
+（12）String getRemoteAddr() 返回发送此请求的客户端IP地址；
+
+（13）String getRealPath(String path) 返回一虚拟路径的真实路径；
+
+（14）String request.getContextPath() 返回上下文路径；</code></pre><h4 id="2-reponse对象"><a href="#2-reponse对象" class="headerlink" title="2.reponse对象"></a>2.reponse对象</h4><hr>
+<p>response 代表的是对客户端的响应，主要是将JSP容器处理过的对象传回到客户端。response对象也具有作用域，它只在JSP页面内有效。</p>
+<h5 id="（1）response对象的常用方法："><a href="#（1）response对象的常用方法：" class="headerlink" title="（1）response对象的常用方法："></a>（1）response对象的常用方法：</h5><pre><code>addCookie ： 向客户端添加Cookie
+
+setContentTYpe ： 设置HTTP响应的contentTYpe类型
+
+setCharacterEncoding ： 设置响应采用的字符编码，用于乱码问题。。
+
+sendRedirect ： 将请求重定向到另一个URL上　　　　　　
+
+response对象最常用的方法是sendRedirect ()负责页面重定向。
+</code></pre><h5 id="（2）response对象的其他方法："><a href="#（2）response对象的其他方法：" class="headerlink" title="（2）response对象的其他方法："></a>（2）response对象的其他方法：</h5><pre><code>（1）String getCharacterEncoding() 返回响应用的是何种字符编码；
+
+（2）void setContentType（String type） 设置响应的MIME类型；
+
+（3）PrintWriter getWriter() 返回可以向客户端输出字符的一个对象；
+
+　　　注意比较：PrintWriter与内置out对象的区别；
+
+（4）sendRedirect(java.lang.String location) 重新定向客户端的请求；</code></pre><p>注意：</p>
+<pre><code>（1）request的getRequestDispatcher负责转发，response的sendRedirect 负责重定向
+    他们两的区别：转发携带数据到另一个页面，重定向不携带数据。转发地址不变，重定向地址改变。
+
+（2）request对象是负责客户端向服务器端发送请求，而response是负责把服务器端的信息返回给客户端。
+</code></pre><h4 id="3-out"><a href="#3-out" class="headerlink" title="3.out"></a>3.out</h4><hr>
+<p>out 对象用于在Web浏览器内输出信息，并且管理应用服务器上的输出缓冲区。在使用 out 对象输出数据时，可以对数据缓冲区进行操作，及时清除缓冲区中的残余数据，为其他的输出让出缓冲空间。待数据输出完毕后，要及时关闭输出流。</p>
+<p>常用方法</p>
+<pre><code>（1）void println() 向客户端打印字符串；
+
+（2）void clear() 清除缓冲区的内容，如果在flush之后调用会抛出异常；
+
+（3）void clearBuffer() 清除缓冲区的内容，如果在flush之后调用不会抛出异常；
+
+（4）void flush() 将缓冲区内容输出到客户端；
+
+（5）int getBufferSize() 返回缓冲区字节数的大小，如不设缓冲区则为0；
+
+（6）int getRemaining() 返回缓冲区还剩余多少可用；
+
+（7）boolean isAutoFlush() 返回缓冲区满时，是自动清空还是抛出异常；
+
+（8）void close() 关闭输出流；</code></pre><h4 id="4-session对象"><a href="#4-session对象" class="headerlink" title="4.session对象"></a>4.session对象</h4><hr>
+<p>session对象：是一个jsp内置对象，它在第一个jsp被装载时自动创建，完成会话期管理。从一个客户打开浏览器并连接到服务器开始，到客户关闭浏览器离  开这个服务器结束(或者超时)，被称为一个会话。当一个客户访问一个服务器时，可能会在这个服务器的几个页面之间切换，服务器应当通过某种办法知道这是一个客户，就需要创建session对象。</p>
+<p>session 对象是由服务器自动创建的与用户请求相关的对象。服务器为每个用户都生成一个session对象，用于保存该用户的信息，跟踪用户的操作状态。session对象内部使用Map类来保存数据，因此保存数据的格式为 “Key/value”。 session对象的value可以使复杂的对象类型，而不仅仅局限于字符串类型。</p>
+<h5 id="（1）session对象的简介与作用："><a href="#（1）session对象的简介与作用：" class="headerlink" title="（1）session对象的简介与作用："></a>（1）session对象的简介与作用：</h5><pre><code>（1）session对象是一个JSP内置对象；
+
+（2）session对象在第一个JSP页面被装载时自动创建，完成会话期管理；
+
+（3）从一个客户打开浏览器并链接到服务器开始，到客户关闭浏览器离开这个服务器结束，被成为一个会话；
+
+（4）当一个客户访问一个服务器时，可能会在服务器的几个页面之间切换，服务器应当通过某种办法知道这是一个客户，就需要session对象；
+
+（5）session对象是HttpSession类的实例；</code></pre><h5 id="（2）session的常用方法："><a href="#（2）session的常用方法：" class="headerlink" title="（2）session的常用方法："></a>（2）session的常用方法：</h5><pre><code>getId ：获取sessionid
+
+setMaxInactiveInterval ：设置session的非活动时间
+
+getMaxInactiveInterval ：获取session的有效非活动时间，以秒为单位。
+
+invalidate ：设置session对象失效
+
+setAttribute :：设置以key/value的方式存储对象
+
+getAttribut ： 以key的方式查看session会话中的对象
+
+removeAttribut ：以key的方式删除session会话中的对象</code></pre><h5 id="（3）session的其他方法"><a href="#（3）session的其他方法" class="headerlink" title="（3）session的其他方法"></a>（3）session的其他方法</h5><pre><code>（1）long getCreationTime();  返回SESSION创建时间；
+
+（2）public String getId();  返回SESSION创建时JSP引擎为它设的唯一ID号；
+
+（3）public Object setAttribute(String name,Object value);  使用指定名称将对象绑定到此会话；
+
+（4）public Object getAttribute(String name);  返回与此会话中的指定名称绑定在一起的对象，如果没有对象绑定在该名称下，则返回null；
+
+（5）String[ ] getValueName();  返回一个包含此SESSION中所有可用属性的数组；
+
+（6）int getMaxInactiveInterval();  返回两次请求间隔多长时间此SESSION被取消（单位秒）；</code></pre><h4 id="5-application对象"><a href="#5-application对象" class="headerlink" title="5.application对象"></a>5.application对象</h4><hr>
+<p>application对象代表当前的应用程序（应用一旦启动便会自动生成一个application对象），存在于服务器的内存空间中，直到服务器关闭，否则application对象中保存的信息会在整个应用中都有效。与session对象相比，application对象生命周期更长，类似于系统的“全局变量”。</p>
+<h5 id="（1）简介与作用："><a href="#（1）简介与作用：" class="headerlink" title="（1）简介与作用："></a>（1）简介与作用：</h5><pre><code>    a、application对象实现了用户间数据的共享，可存放全局变量；
+
+　　 b、application开始于服务器的启动，终止于服务器的关闭；
+
+　　 c、在用户的前后连接或不同用户之间的连接中，可以对application对象的同一属性进行操作；
+
+　　 d、在任何地方对application对象属性的操作，都将影响到其他用户对此的访问；
+
+　　 e、服务器的启动和关闭决定了application对象的生命；
+
+　　 f、application对象是ServletContext类的实例；</code></pre><h5 id="（2）常用方法"><a href="#（2）常用方法" class="headerlink" title="（2）常用方法"></a>（2）常用方法</h5><pre><code>（1）public void setAttribute(String name, Object value); 使用指定名称将对象绑定到此会话。
+
+（2）public Object getAttribute(String name); 返回与此会话中的指定名称绑定在一起的对象，如果没有对象绑定在该名称下，则返回null。
+
+（3）Enumeration getAttributeNames(); 返回所有可用属性名的枚举。
+
+（4）String getServerInfo(); 返回JSP（SERVLET）引擎名及版本号。int </code></pre><h5 id="（3）应用："><a href="#（3）应用：" class="headerlink" title="（3）应用："></a>（3）应用：</h5><p>​                    为多个用户共享全局信息。比如当前的在线人数等。</p>
+<h4 id="6-config对象"><a href="#6-config对象" class="headerlink" title="6.config对象"></a>6.config对象</h4><hr>
+<p>config 对象的主要作用是取得服务器的配置信息。当一个Servlet 初始化时，容器把某些信息通过 config对象传递给这个 Servlet。 开发者可以在web.xml 文件中为应用程序环境中的Servlet程序和JSP页面提供初始化参数</p>
+<h5 id="（1）常用方法"><a href="#（1）常用方法" class="headerlink" title="（1）常用方法"></a>（1）常用方法</h5><pre><code>（1）ServletContext getServletContext() 返回含有服务器相关信息的ServletContext对象；
+
+　　（2）String getInitParameter(String name) 返回初始化参数的值；
+
+　　（3）Enumeration getInitParameterNames() 返回Servlet初始化所需所有参数的枚举；</code></pre><h5 id="（2）注意"><a href="#（2）注意" class="headerlink" title="（2）注意"></a>（2）注意</h5><pre><code>一般项目中，jsp被用作模版技术，也就是位于表示层，而位于表示层的jsp文件一般是不需要配置信息的
+所以此对象在jsp程序中其实很少使用</code></pre><h4 id="7-pageContest"><a href="#7-pageContest" class="headerlink" title="7.pageContest"></a>7.pageContest</h4><hr>
+<p>pageContext 的对象类型是PageContext,叫jsp的上下文对象。</p>
+<h5 id="（1）作用"><a href="#（1）作用" class="headerlink" title="（1）作用"></a>（1）作用</h5><pre><code>（1）pageContext对象提供了对JSP页面内所有的对象及名字空间的访问；
+
+（2）pageContext对象可以访问到本页所在session，也可以取本页面所在的application的某一属性值；
+
+（3）pageContext对象相当于页面中所有功能的集大成者；
+
+（4）pageContext对象的本类名也叫pageContext。</code></pre><h5 id="（2）常用方法-1"><a href="#（2）常用方法-1" class="headerlink" title="（2）常用方法"></a>（2）常用方法</h5><pre><code>（1）JspWriter getOut() 返回当前客户端响应被使用的JspWriter流（out）
+
+（2）HttpSession getSession() 返回当前页中的HttpSession对象（session）
+
+（3）Object getPage() 返回当前页的Object对象（page）
+
+（4）ServletRequest getRequest() 返回当前页的ServletRequest对象（request）
+
+（5）servletResponse getResponse() 返回当前页的ServletResponse对象（response）
+
+（6）void setAttribute(String name,Object attribute) 设置属性及属性值
+
+（7）Object getAttribute(String name,int scope) 在指定范围内取属性的值 
+
+（8）int getAttributeScope(String name) 返回某属性的作用范围
+
+（9）void forward(String relativeUrlPath) 使当前页面重导到另一页面
+
+（10）void include(String relativeUrlPath) 在当前位置包含另一文件</code></pre><h4 id="8-page对象"><a href="#8-page对象" class="headerlink" title="8.page对象"></a>8.page对象</h4><hr>
+<p>page 对象代表JSP本身，只有在JSP页面内才是合法的。 page隐含对象本质上包含当前 Servlet接口引用的变量，类似于Java编程中的 this 指针。</p>
+<h5 id="（1）常用方法-1"><a href="#（1）常用方法-1" class="headerlink" title="（1）常用方法"></a>（1）常用方法</h5><pre><code>（1）class getaClass()  返回此Object的类；
+
+（2）int hashCode()  返回Object 的hash码；
+
+（3）boolean equals(Object obj)  判断此Object 是否与指定的Object对象相等；
+
+（4）void copy(Object obj)  把此Object拷贝到指定的Object对象中；
+
+（5）Object clone()  克隆此Object对象；
+
+（6）String toString()  把此Object对象转换成String类的对象；
+
+（7）void notify()  唤醒一个等待的线程；
+
+（8）void notifyAll()  唤醒所有等待的线程；
+
+（9）void wait(int timeout)  使一个线程处于等待直到timeout结束或被唤醒；
+
+（10）void wait()  使一个线程处于等待直到被唤醒；</code></pre><h4 id="9-exception对象"><a href="#9-exception对象" class="headerlink" title="9.exception对象"></a>9.exception对象</h4><hr>
+<p>exception对象是一个异常对象，当一个页面在运行过程中发生了异常，就产生这个对象。作用是显示异常信息，并且只有在包含 isErrorPage=”true” 的页面中才可以被使用，在一般的JSP页面中使用该对象将无法编译JSP文件。excepation对象和Java的所有对象一样，都具有系统提供的继承结构。exception 对象几乎定义了所有异常情况。在Java程序中，可以使用try/catch关键字来处理异常情况； 如果在JSP页面中出现没有捕获到的异常，就会生成 exception 对象，并把 exception 对象传送到在page指令中设定的错误页面中，然后在错误页面中处理相应的 exception 对象。</p>
+<h5 id="（1）常用方法-2"><a href="#（1）常用方法-2" class="headerlink" title="（1）常用方法"></a>（1）常用方法</h5><pre><code>（1）String getMessage() 返回描述异常的消息；
+
+（2）String toString() 返回关于异常的简短描述消息；
+
+（3）void printStackTrace() 显示异常及其栈轨迹；
+
+（4）Throwable FillInStackTtace() 重写异常的执行栈轨迹；</code></pre><h4 id="10-四种属性范围"><a href="#10-四种属性范围" class="headerlink" title="10.四种属性范围:"></a>10.四种属性范围:</h4><hr>
+<pre><code>page(pageContext):只在一个页面中保存属性。 跳转之后无效。
+request:只在一次请求中有效，服务器跳转之后有效。 客户端跳无效
+session:再一次会话中有效。服务器跳转、客户端跳转都有效。 网页关闭重新打开无效
+application:在整个服务器上保存，所有用户都可使用。 重启服务器后无效</code></pre><h4 id="11-表单提交方式（get和post）"><a href="#11-表单提交方式（get和post）" class="headerlink" title="11.表单提交方式（get和post）"></a>11.表单提交方式（get和post）</h4><pre><code>（1）get：以明文的方式通过URL提交数据，数据在URL中可以看到。提交的数据最多不超过2KB。安全性较低但效率比post方式高。适合提交数据量不大，安全性不高的数据。比如：搜索、查询等功能。
+
+（2）post：将用户提交的信息封装在HTML HEADER内。适合提交数据量大，安全性高的用户信息。比如：注册、修改、上传等功能。</code></pre>
+            <hr>
+          </div>
+          <br>
+          <div>
+            
+            <p>
+              <i class="iconfont icon-tag"></i>
+              
+            </p>
+            
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://pic.sogou.com/d?query=%CD%BC%C6%AC&st=0&mode=1&mood=0&dm=4&cwidth=150&cheight=150&did=22#did21" rel="nofollow noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+  </div>
+</div>
+
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    <br>
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="/lib/jquery/jquery.min.js" ></script>
+<script src="/lib/popper/popper.min.js" ></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js" ></script>
+<script src="/lib/mdbootstrap/js/mdb.min.js" ></script>
+<script src="/js/main.js" ></script>
+
+  <script src="/js/lazyload.js" ></script>
+
+
+  
+    <script src="/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
+
+  <script src="/lib/prettify/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+  <script src="/lib/typed/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "JSP中内置对象一&nbsp;",
+      ],
+      cursorChar: "小可爱",
+      typeSpeed: 10,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+  <script src="/lib/anchor/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "false",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script>
+    if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent) || (/Safari/i.test(navigator.userAgent) && !/Chrome/i.test(navigator.userAgent))) {
+      $("#background").css("background-attachment", "scroll");
+    }
+  </script>
+
+</body>
+</html>

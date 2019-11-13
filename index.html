@@ -128,8 +128,41 @@
     
     
     <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/11/12/JSP中内置对象二/">
+        <p class="h4 index-header">JSP中内置对象二</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">JSP内置对象在JSP中一共预先定义了9个这样的对象，分别为request、response、session、application、out、pageContext、config、page和exception。
+
+1.request对象（request对象用于处理HTTP请求中的各项参数）request对象封装了由客户端生成的HTTP请求的所有细节，主要包括HTTP头信息、系统信息、请求方式和请求参数等。通过request对象提供的相应方法可以处理客户端浏览器提交的HTTP请求中的各项参数。
+request对象的常用方法：
+
+2、response对象response对象用于响应客户请求，向客户端输出信息。它封装了JSP产生的响应，并发送到客户端以响应客户端的请求。请求的数据可以是各种数据类型，甚至是文件。response对象在JSP页面内有效。
+request对象的常用方法：
+方法                                           说明
+sendRedirect(String path)                    将网页重定向到另一个页面。</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-12&nbsp;&nbsp;
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
       <a href="/2019/11/12/JSP中cookie的使用/">
-        <p class="h4 index-header">JSP中cookie的使用</p>
+        <p class="h4 index-header">JSP中Cookie的使用</p>
         
         
           
@@ -158,24 +191,21 @@ cookie原理示意图
     
     
     <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/11/11/JSP九大内置对象/">
-        <p class="h4 index-header">JSP九大内置对象</p>
+      <a href="/2019/11/11/JSP中内置对象一/">
+        <p class="h4 index-header">JSP中内置对象一</p>
         
         
           
         
         <div class="index-excerpt" >
-          <div class="index-text mb-1">JSP内置对象1.JSP内置对象包括
-（1）request            HttpServletRequest 接口的实例
-（2）response            HttpServletResponse 接口的实例
-（3）out                JspWriter类的实例，用于把结果输出至网页上
-（4）session            HttpSession类的实例
-（5）application        ServletContext类的实例，与应用上下文有关
-（6）config            ServletConfig类的实例
-（7）pageContext        PageContext类的实例，提供对JSP页面所有对象以及命名空间的访问
-（8）page                类似于Java类中的this关键字
-（9）Exception        Exception类的对象，代表发生错误的JSP页面中对应的异常对象1.request对象
-request对象是javax.servlet.http.HttpServletReq</div>
+          <div class="index-text mb-1">JSP内置对象一.内置对象1.什么是内置对象在jsp开发中会频繁使用到一些对象,如ServletContext HttpSession PageContext等.如果每次我们在jsp页面中需要使用这些对象都要自己亲自动手创建就会特别的繁琐.SUN公司因此在设计jsp时,在jsp页面加载完毕之后自动帮开发者创建好了这些对象,开发者只需要使用相应的对象调用相应的方法即可.这些系统创建好的对象就叫做内置对象。
+2.内置对象（又叫隐含对象)优点1. 由JSP规范提供,不用编写者实例化。 
+2. 通过Web容器实现和管理 
+3. 所有JSP页面均可使用 
+4. 只有在脚本元素的表达式或代码段中才可使用(&lt;%=使用内置对象%&gt;或&lt;%使用内置对象%&gt;)3.JSP内置对象包括（1）request            获取用户的请求信息，向客户端请求数据
+（2）response            服务器向客户端的回应信息封装了jsp产生的响应,然后被发送到客户端以响应客户的请求
+（3）out                向客户端输出数据
+（4）session       </div>
         </div>
       </a>
 
@@ -434,43 +464,6 @@ alter</div>
       <div>
         
           <i class="iconfont icon-riqi2"></i>&nbsp;2019-10-29&nbsp;&nbsp;
-        
-        
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/10/28/数据库基本案例/">
-        <p class="h4 index-header">数据库基本案例</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">Mysql的案例与基本操作：步骤：
-1.create database schooldb;
-2.use schooldb;3.create table stuinfo
-(
-    number int auto_increment primary key,
-    name varchar(25) not null,
-    adress varchar(25),
-    score int,
-    rank int
-);4.desc stuinfo;（显示表结构）5.insert into stuinfo(number,name,adress,score,rank) values
-  (01,&#39;刘硕&#39;,&#39;镇平张林&#39;,98,1);6.insert into stuinfo(name,adress,score,rank) values
-  (&#39;张&#39;,&#39;镇平晁陂&#39;,80,3),
-  (&#39;肖&#39;,&#39;镇平卢医&#39;,86,2);一、关于数据库的基本操作创建数据库 -&gt;create database</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-10-28&nbsp;&nbsp;
         
         
         
