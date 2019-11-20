@@ -128,8 +128,8 @@
     
     
     <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/11/12/JSP中内置对象二/">
-        <p class="h4 index-header">JSP中内置对象二</p>
+      <a href="/2019/11/12/JSP中内置对象详解/">
+        <p class="h4 index-header">JSP中内置对象详解</p>
         
         
           
@@ -161,8 +161,8 @@ sendRedirect(String path)                    将网页重定向到另一个页�
     
     
     <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/11/11/JSP中内置对象一/">
-        <p class="h4 index-header">JSP中内置对象一</p>
+      <a href="/2019/11/11/JSP中内置对象（演讲）/">
+        <p class="h4 index-header">JSP中内置对象（演讲）</p>
         
         
           
@@ -294,35 +294,6 @@ cookie原理示意图
     
     
     <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/11/02/自学PS/">
-        <p class="h4 index-header">自学PS</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">PS基础直接拉进来ctrl+t图片放大放小自由变换shirt等比例方大
-ctrl+shirt+i反选/鼠标右键选择反选ctrl+d取消选取
-c+s+u去色ctrl+j复制图层ctrl+i反向
-滤镜里面的液化可以把脸修瘦
-</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-02&nbsp;&nbsp;
-        
-        
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
       <a href="/2019/11/01/Eclipse连接Mysql数据库/">
         <p class="h4 index-header">Eclipse连接Mysql数据库</p>
         
@@ -334,14 +305,11 @@ c+s+u去色ctrl+j复制图层ctrl+i反向
 到www.mvnrepository.com
 2、打开ECLIPSE,创建一个DYNAMIC WEB PROJECT项目在lib中插入mysql-connector文件
 3.打开 NEWFILE.JSP文件插入下面代码 更改相应信息即可
-&lt;%
-    String driver = &quot;com.mysql.jdbc.Driver&quot;;
-    // URL指向要访问的数据库名test1
-    String url = &quot;jdbc:mysql://localhost:3306/schooldb&quot;;
-    // MySQL配置时的用户名
-    String user = &quot;root&quot;;
-    // Java连接MySQL配置时的密码
-    St</div>
+&lt;%@page import=&quot;java.sql.SQLException&quot;%&gt;
+&lt;%@page import=&quot;java.sql.ResultSet&quot;%&gt;
+&lt;%@page import=&quot;java.sql.Statement&quot;%&gt;
+&lt;%@page import=&quot;java.sql.DriverManager&quot;%&gt;
+&lt;%@page import=</div>
         </div>
       </a>
 
@@ -464,6 +432,43 @@ alter</div>
       <div>
         
           <i class="iconfont icon-riqi2"></i>&nbsp;2019-10-29&nbsp;&nbsp;
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/10/28/数据库基本案例/">
+        <p class="h4 index-header">数据库基本案例</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">Mysql的案例与基本操作：步骤：
+1.create database schooldb;
+2.use schooldb;3.create table stuinfo
+(
+    number int auto_increment primary key,
+    name varchar(25) not null,
+    adress varchar(25),
+    score int,
+    rank int
+);4.desc stuinfo;（显示表结构）5.insert into stuinfo(number,name,adress,score,rank) values
+  (01,&#39;刘硕&#39;,&#39;镇平张林&#39;,98,1);6.insert into stuinfo(name,adress,score,rank) values
+  (&#39;张&#39;,&#39;镇平晁陂&#39;,80,3),
+  (&#39;肖&#39;,&#39;镇平卢医&#39;,86,2);一、关于数据库的基本操作创建数据库 -&gt;create database</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-10-28&nbsp;&nbsp;
         
         
         

@@ -127,7 +127,22 @@
 <p>到<a href="http://www.mvnrepository.com" target="_blank" rel="noopener">www.mvnrepository.com</a></p>
 <h5 id="2、打开ECLIPSE-创建一个DYNAMIC-WEB-PROJECT项目"><a href="#2、打开ECLIPSE-创建一个DYNAMIC-WEB-PROJECT项目" class="headerlink" title="2、打开ECLIPSE,创建一个DYNAMIC WEB PROJECT项目"></a>2、打开ECLIPSE,创建一个DYNAMIC WEB PROJECT项目</h5><p>在lib中插入mysql-connector文件</p>
 <h5 id="3-打开-NEWFILE-JSP文件"><a href="#3-打开-NEWFILE-JSP文件" class="headerlink" title="3.打开 NEWFILE.JSP文件"></a>3.打开 NEWFILE.JSP文件</h5><p>插入下面代码 更改相应信息即可</p>
-<pre><code class="jsp">&lt;%
+<pre><code class="jsp">&lt;%@page import=&quot;java.sql.SQLException&quot;%&gt;
+&lt;%@page import=&quot;java.sql.ResultSet&quot;%&gt;
+&lt;%@page import=&quot;java.sql.Statement&quot;%&gt;
+&lt;%@page import=&quot;java.sql.DriverManager&quot;%&gt;
+&lt;%@page import=&quot;java.sql.Connection&quot;%&gt;
+&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot;%&gt;
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
+&lt;title&gt;Insert title here&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    你好呀，小可爱
+    &lt;%
     String driver = &quot;com.mysql.jdbc.Driver&quot;;
     // URL指向要访问的数据库名test1
     String url = &quot;jdbc:mysql://localhost:3306/schooldb&quot;;
@@ -166,7 +181,9 @@
     }
 
 
-%&gt;</code></pre>
+    %&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
 
             <hr>
           </div>
