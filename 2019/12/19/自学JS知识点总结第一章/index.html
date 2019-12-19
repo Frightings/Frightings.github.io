@@ -248,7 +248,7 @@ console.log(5 + 6);
 &lt;/html&gt;</code></pre><hr>
 <h5 id="4-JavaScript语句"><a href="#4-JavaScript语句" class="headerlink" title="4.JavaScript语句"></a>4.JavaScript语句</h5><p>（1）JavaScript 语句由以下构成：</p>
 <p>​        值、运算符、表达式、关键词和注释。</p>
-<p>（2）JavaScript中的关键字：</p>
+<p>（2JavaScript中的关键字：</p>
 <pre><code>     关键词                    描述
     break                终止 switch 或循环。
     continue            跳出循环并在顶端开始。
@@ -689,6 +689,519 @@ var answer = &#39;How are you!&#39;;
 <p>​    上例使用 4 位无符号的例子。但是 JavaScript 使用 32 位有符号数。</p>
 <p>​    因此，在 JavaScript 中，~ 5 不会返回 10，而是返回 -6。</p>
 <p>​    ~00000000000000000000000000000101 将返回 11111111111111111111111111111010。</p>
+<hr>
+<h5 id="9-JavaScript算术运算符优先级"><a href="#9-JavaScript算术运算符优先级" class="headerlink" title="9.JavaScript算术运算符优先级"></a>9.JavaScript算术运算符优先级</h5><p>（1）算术运算符</p>
+<table>
+<thead>
+<tr>
+<th align="left">运算符</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">+</td>
+<td align="left">加法</td>
+</tr>
+<tr>
+<td align="left">-</td>
+<td align="left">减法</td>
+</tr>
+<tr>
+<td align="left">*</td>
+<td align="left">乘法</td>
+</tr>
+<tr>
+<td align="left">**</td>
+<td align="left">幂（<a href="https://www.w3school.com.cn/js/js_es6.asp" target="_blank" rel="noopener">ES2016</a>）</td>
+</tr>
+<tr>
+<td align="left">/</td>
+<td align="left">除法</td>
+</tr>
+<tr>
+<td align="left">%</td>
+<td align="left">系数</td>
+</tr>
+<tr>
+<td align="left">++</td>
+<td align="left">递增</td>
+</tr>
+<tr>
+<td align="left">–</td>
+<td align="left">递减</td>
+</tr>
+</tbody></table>
+<p>（2）运算符优先级</p>
+<table>
+<thead>
+<tr>
+<th align="left">值</th>
+<th align="left">运算符</th>
+<th align="left">描述</th>
+<th align="left">实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">20</td>
+<td align="left">( )</td>
+<td align="left">表达式分组</td>
+<td align="left">(3 + 4)</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">19</td>
+<td align="left">.</td>
+<td align="left">成员</td>
+<td align="left">person.name</td>
+</tr>
+<tr>
+<td align="left">19</td>
+<td align="left">[]</td>
+<td align="left">成员</td>
+<td align="left">person[“name”]</td>
+</tr>
+<tr>
+<td align="left">19</td>
+<td align="left">()</td>
+<td align="left">函数调用</td>
+<td align="left">myFunction()</td>
+</tr>
+<tr>
+<td align="left">19</td>
+<td align="left">new</td>
+<td align="left">创建</td>
+<td align="left">new Date()</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">17</td>
+<td align="left">++</td>
+<td align="left">后缀递增</td>
+<td align="left">i++</td>
+</tr>
+<tr>
+<td align="left">17</td>
+<td align="left">–</td>
+<td align="left">后缀递减</td>
+<td align="left">i–</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">16</td>
+<td align="left">++</td>
+<td align="left">前缀递增</td>
+<td align="left">++i</td>
+</tr>
+<tr>
+<td align="left">16</td>
+<td align="left">–</td>
+<td align="left">前缀递减</td>
+<td align="left">–i</td>
+</tr>
+<tr>
+<td align="left">16</td>
+<td align="left">!</td>
+<td align="left">逻辑否</td>
+<td align="left">!(x==y)</td>
+</tr>
+<tr>
+<td align="left">16</td>
+<td align="left">typeof</td>
+<td align="left">类型</td>
+<td align="left">typeof x</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">15</td>
+<td align="left">**</td>
+<td align="left">求幂 (ES7)</td>
+<td align="left">10 ** 2</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">14</td>
+<td align="left">*</td>
+<td align="left">乘</td>
+<td align="left">10 * 5</td>
+</tr>
+<tr>
+<td align="left">14</td>
+<td align="left">/</td>
+<td align="left">除</td>
+<td align="left">10 / 5</td>
+</tr>
+<tr>
+<td align="left">14</td>
+<td align="left">%</td>
+<td align="left">模数除法</td>
+<td align="left">10 % 5</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">13</td>
+<td align="left">+</td>
+<td align="left">加</td>
+<td align="left">10 + 5</td>
+</tr>
+<tr>
+<td align="left">13</td>
+<td align="left">-</td>
+<td align="left">减</td>
+<td align="left">10 - 5</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">12</td>
+<td align="left">&lt;&lt;</td>
+<td align="left">左位移</td>
+<td align="left">x &lt;&lt; 2</td>
+</tr>
+<tr>
+<td align="left">12</td>
+<td align="left">&gt;&gt;</td>
+<td align="left">右位移</td>
+<td align="left">x &gt;&gt; 2</td>
+</tr>
+<tr>
+<td align="left">12</td>
+<td align="left">&gt;&gt;&gt;</td>
+<td align="left">右位移（无符号）</td>
+<td align="left">x &gt;&gt;&gt; 2</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">11</td>
+<td align="left">&lt;</td>
+<td align="left">小于</td>
+<td align="left">x &lt; y</td>
+</tr>
+<tr>
+<td align="left">11</td>
+<td align="left">&lt;=</td>
+<td align="left">小于或等于</td>
+<td align="left">x &lt;= y</td>
+</tr>
+<tr>
+<td align="left">11</td>
+<td align="left">&gt;</td>
+<td align="left">大于</td>
+<td align="left">x &gt; y</td>
+</tr>
+<tr>
+<td align="left">11</td>
+<td align="left">&gt;=</td>
+<td align="left">大于或等于</td>
+<td align="left">x &gt;= y</td>
+</tr>
+<tr>
+<td align="left">11</td>
+<td align="left">in</td>
+<td align="left">对象中的属性</td>
+<td align="left">“PI” in Math</td>
+</tr>
+<tr>
+<td align="left">11</td>
+<td align="left">instanceof</td>
+<td align="left">对象的实例</td>
+<td align="left">instanceof Array</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">10</td>
+<td align="left">==</td>
+<td align="left">相等</td>
+<td align="left">x == y</td>
+</tr>
+<tr>
+<td align="left">10</td>
+<td align="left">===</td>
+<td align="left">严格相等</td>
+<td align="left">x === y</td>
+</tr>
+<tr>
+<td align="left">10</td>
+<td align="left">!=</td>
+<td align="left">不相等</td>
+<td align="left">x != y</td>
+</tr>
+<tr>
+<td align="left">10</td>
+<td align="left">!==</td>
+<td align="left">严格不相等</td>
+<td align="left">x !== y</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">9</td>
+<td align="left">&amp;</td>
+<td align="left">按位与</td>
+<td align="left">x &amp; y</td>
+</tr>
+<tr>
+<td align="left">8</td>
+<td align="left">^</td>
+<td align="left">按位 XOR</td>
+<td align="left">x ^ y</td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td align="left">|</td>
+<td align="left">按位或</td>
+<td align="left">x | y</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">&amp;&amp;</td>
+<td align="left">逻辑与</td>
+<td align="left">x &amp;&amp; y</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">||</td>
+<td align="left">逻辑否</td>
+<td align="left">x || y</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">? :</td>
+<td align="left">条件</td>
+<td align="left">? “Yes” : “No”</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">=</td>
+<td align="left">赋值</td>
+<td align="left">x = y</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">+=</td>
+<td align="left">赋值</td>
+<td align="left">x += y</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">-=</td>
+<td align="left">赋值</td>
+<td align="left">x -= y</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">*=</td>
+<td align="left">赋值</td>
+<td align="left">x *= y</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">%=</td>
+<td align="left">赋值</td>
+<td align="left">x %= y</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">&lt;&lt;=</td>
+<td align="left">赋值</td>
+<td align="left">x &lt;&lt;= y</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">&gt;&gt;=</td>
+<td align="left">赋值</td>
+<td align="left">x &gt;&gt;= y</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">&gt;&gt;&gt;=</td>
+<td align="left">赋值</td>
+<td align="left">x &gt;&gt;&gt;= y</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">&amp;=</td>
+<td align="left">赋值</td>
+<td align="left">x &amp;= y</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">^=</td>
+<td align="left">赋值</td>
+<td align="left">x ^= y</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">|=</td>
+<td align="left">赋值</td>
+<td align="left">x |= y</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">yield</td>
+<td align="left">暂停函数</td>
+<td align="left">yield x</td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left">,</td>
+<td align="left">逗号</td>
+<td align="left">7 , 8</td>
+</tr>
+</tbody></table>
+<p><strong>注意：</strong>淡红色指示实验性或建议性的技术（ECMASScript 2016 或 ES7）</p>
+<p><strong>提示：</strong>括号中的表达式会在值在表达式的其余部分中被使用之前进行完全计算。  </p>
+<hr>
+<h5 id="10-JavaScript赋值运算符"><a href="#10-JavaScript赋值运算符" class="headerlink" title="10.JavaScript赋值运算符"></a>10.JavaScript赋值运算符</h5><table>
+<thead>
+<tr>
+<th align="left">运算符</th>
+<th align="left">例子</th>
+<th align="left">等同于</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">=</td>
+<td align="left">x = y</td>
+<td align="left">x = y</td>
+</tr>
+<tr>
+<td align="left">+=</td>
+<td align="left">x += y</td>
+<td align="left">x = x + y</td>
+</tr>
+<tr>
+<td align="left">-=</td>
+<td align="left">x -= y</td>
+<td align="left">x = x - y</td>
+</tr>
+<tr>
+<td align="left">*=</td>
+<td align="left">x *= y</td>
+<td align="left">x = x * y</td>
+</tr>
+<tr>
+<td align="left">/=</td>
+<td align="left">x /= y</td>
+<td align="left">x = x / y</td>
+</tr>
+<tr>
+<td align="left">%=</td>
+<td align="left">x %= y</td>
+<td align="left">x = x % y</td>
+</tr>
+<tr>
+<td align="left">&lt;&lt;=</td>
+<td align="left">x &lt;&lt;= y</td>
+<td align="left">x = x &lt;&lt; y</td>
+</tr>
+<tr>
+<td align="left">&gt;&gt;=</td>
+<td align="left">x &gt;&gt;= y</td>
+<td align="left">x = x &gt;&gt; y</td>
+</tr>
+<tr>
+<td align="left">&gt;&gt;&gt;=</td>
+<td align="left">x &gt;&gt;&gt;= y</td>
+<td align="left">x = x &gt;&gt;&gt; y</td>
+</tr>
+<tr>
+<td align="left">&amp;=</td>
+<td align="left">x &amp;= y</td>
+<td align="left">x = x &amp; y</td>
+</tr>
+<tr>
+<td align="left">^=</td>
+<td align="left">x ^= y</td>
+<td align="left">x = x ^ y</td>
+</tr>
+<tr>
+<td align="left">|=</td>
+<td align="left">x |= y</td>
+<td align="left">x = x | y</td>
+</tr>
+<tr>
+<td align="left">**=</td>
+<td align="left">x **= y</td>
+<td align="left">x = x ** y</td>
+</tr>
+</tbody></table>
+<p><strong>提示：***</strong>*=** 运算符属于 ECMAScript 2016 proposal (ES7) 的实验部分。它的跨浏览器表现并不稳定。请勿使用。</p>
+<hr>
+<h5 id="11-JavaScript数据类型"><a href="#11-JavaScript数据类型" class="headerlink" title="11.JavaScript数据类型"></a>11.JavaScript数据类型</h5><p>​    JavaScript 变量能够保存多种<em>数据类型</em>：数值、字符串值、数组、对象等等：</p>
+<pre><code>var length = 7;                             // 数字
+var lastName = &quot;Gates&quot;;                      // 字符串
+var cars = [&quot;Porsche&quot;, &quot;Volvo&quot;, &quot;BMW&quot;];         // 数组
+var x = {firstName:&quot;Bill&quot;, lastName:&quot;Gates&quot;};    // 对象 </code></pre><p>（1）JavaScript数组</p>
+<p>​    JavaScript 数组用方括号书写。</p>
+<p>​    数组的项目由逗号分隔。</p>
+<p>​    下面的代码声明（创建）了名为 cars 的数组，包含三个项目（汽车品牌）：</p>
+<pre><code>var cars = [&quot;Porsche&quot;, &quot;Volvo&quot;, &quot;BMW&quot;];</code></pre><p>​    数组索引基于零，这意味着第一个项目是 [0]，第二个项目是 [1]，以此类推。</p>
+<p>​    您将在本教程中学到更多有关数组的知识。</p>
+<p>（2）JavaScript对象</p>
+<p>​    avaScript 对象用花括号来书写。</p>
+<p>​    对象属性是 <em>name</em>:<em>value</em> 对，由逗号分隔。</p>
+<pre><code>var person = {firstName:&quot;Bill&quot;, lastName:&quot;Gates&quot;, age:62, eyeColor:&quot;blue&quot;};</code></pre><p>​    上例中的对象（person）有四个属性：firstName、lastName、age 以及 eyeColor。</p>
+<p>​    您将在本教程中学到更多有关对象的知识。</p>
 
             <hr>
           </div>
